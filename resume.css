@@ -19,6 +19,7 @@ p {
 }
 
 body {
+  margin: 0px;
   padding: 40px 120px;
   display: flex;
   justify-content: space-between;
@@ -35,21 +36,23 @@ aside {
   position: sticky;
   top: 0;
   height: fit-content;
-  background-color: var(--background-color);
-  border-radius: 20px;
-  box-shadow: 0px 0px 40px 5px var(--background-color);
+  text-align: center;
 }
 
 /* Top sidebar */
-aside div:first-child:not(.info) {
+aside div.aside-top {
   text-align: center;
   background-color: white;
-  padding-top: 30px;
+  padding-top: 210px;
   padding-bottom: 19px;
   border-radius: 20px 20px 0px 0px;
+  box-shadow: 0px -4px 50px 0px rgba(44, 125, 192, 0.2);
 }
 
-aside img {
+aside > img {
+  position: absolute;
+  transform: translate(-50%);
+  top: 30px;
   width: 180px;
   height: 180px;
   padding: 20px;
@@ -63,7 +66,7 @@ p {
   margin-bottom: 13px;
 }
 
-aside div div:not(div.info) {
+aside div.aside-top div {
   width: 80%;
   background-color: var(--background-color);
   margin: 16px auto;
@@ -71,16 +74,21 @@ aside div div:not(div.info) {
   border-radius: 20px;
 }
 
-aside div:not(div.info) > p {
+aside div.aside-top p {
   margin: 0;
 }
 
 /* Bottom sidebar */
+aside div.aside-bottom {
+  padding: 20px;
+  border-radius: 0px 0px 20px 20px;
+  background-color: var(--background-color);
+  box-shadow: 0px 4px 50px 0px rgba(44, 125, 192, 0.2);
+}
 
-aside > div:last-of-type {
+aside div.aside-bottom > div {
   display: flex;
   flex-direction: column;
-  padding: 17px 0;
 }
 
 aside div.info {
@@ -101,14 +109,15 @@ aside div.info img {
 
 aside div.info p {
   margin: 0;
+  text-align: left;
 }
 
-span i {
+aside span i {
   margin-left: 10px;
   margin-right: 10px;
 }
 
-aside div:last-child:not(.info) {
+aside div.aside-bottom {
   padding-top: 17px;
   padding-bottom: 19px;
 }
@@ -117,9 +126,9 @@ aside input {
   display: block;
   width: 182px;
   height: 50px;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
   color: white;
   border: 0;
   background-color: var(--primary-color);
@@ -152,7 +161,7 @@ main {
 
 main > div {
   border-radius: 20px;
-  box-shadow: 0px 0px 10px 5px var(--background-color);
+  box-shadow: 0px 0px 50px 0px rgba(44, 125, 192, 0.2);
   margin-bottom: 40px;
 }
 
@@ -305,29 +314,57 @@ form input[type="submit"]:active {
     width: 100%;
   }
 
-  aside div div:not(div.info) {
+  aside div.aside-top {
+    margin-top: 90px;
+    padding-top: 90px;
+  }
+
+  aside > img {
+    top: 40px;
+  }
+
+  aside div.aside-top div {
     padding: 6px 20px;
     width: fit-content;
   }
 
-  aside > div:last-of-type {
+  aside div.aside-bottom {
+    padding-bottom: 10px;
+  }
+
+  aside div.aside-bottom > div {
     flex-direction: row;
     justify-content: space-between;
-    flex-wrap: wrap;
+  }
+
+  aside div.info {
+    margin: 0;
+    margin-bottom: 10px;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  aside img:first-of-type {
+  /* For mobile */
+  aside > img {
     height: 120px;
     width: 120px;
   }
 
-  aside > div:last-of-type {
+  aside div.aside-top {
+    margin-top: 60px;
+    padding-top: 60px;
+  }
+
+  aside div.aside-bottom > div {
     width: fit-content;
     flex-direction: column;
+    float: left;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  aside input {
+    width: 100%;
   }
 
   section:nth-child(2) > div {
