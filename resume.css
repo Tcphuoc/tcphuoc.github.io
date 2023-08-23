@@ -55,9 +55,7 @@ aside > img {
   top: 30px;
   width: 180px;
   height: 180px;
-  padding: 20px;
   border-radius: 20px;
-  background-color: var(--background-color);
 }
 
 aside h2,
@@ -110,6 +108,7 @@ aside div.info img {
 aside div.info p {
   margin: 0;
   text-align: left;
+  font-size: 12px;
 }
 
 aside span i {
